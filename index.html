@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fafafa">
+    <title>image resize</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <script src=".//node_modules/heic2any/dist/heic2any.min.js"></script>
+    <script src="./resize.js"></script>
+</head>
+
+<body>
+    <main>
+        <h1>image resize rev.2</h1>
+
+        <div>
+            <form enctype="multipart/form-data" method="post">
+                <div>
+                    <h2>default</h2>
+                    <input type="file" name="image_file_a" data-resize="">
+                </div>
+                <div>
+                    <h2>{'w': 100, 'h': 100, 'output_format': 'jpeg'}</h2>
+                    <input type="file" name="image_file_b" accept="image/*"
+                        data-resize="{'w': 100, 'h': 100, 'output_format': 'jpeg'}">
+                </div>
+                <div>
+                    <h2>{'w': 400, 'h': 100, 'output_format': 'png'}</h2>
+                    <input type="file" name="image_file_c" accept="image/*"
+                        data-resize="{'w': 400, 'h': 100, 'output_format': 'png'}">
+                </div>
+                <div>
+                    <h2>{'w': 100, 'h': 100, 'accept_pattern': `image/png`}</h2>
+                    <input type="file" name="image_file_d" accept="image/*"
+                        data-resize="{'w': 100, 'h': 100, 'accept_pattern': 'image/png'}">
+                </div>
+                <div>
+                    <h2>{'w': 400, 'h': 400, 'output_format': 'jpeg', 'output_quality': 1.0}</h2>
+                    <input type="file" name="image_file_e"
+                        data-resize="{'w': 400, 'h': 400, 'output_format': 'jpeg', 'output_quality': 1.0}">
+                </div>
+                <div>
+                    <h2>{'w': 400, 'h': 400, 'output_format': 'jpeg', 'output_quality': 0.0}</h2>
+                    <input type="file" name="image_file_f"
+                        data-resize="{'w': 400, 'h': 400, 'output_format': 'jpeg', 'output_quality': 0.0}">
+                </div>
+                <div>
+                    <h2>{'w': 400, 'h': 400, 'output_format': 'webp'}</h2>
+                    <h2>※Safar非対応＞pngで出力</h2>
+                    <input type="file" name="image_file_gs" data-resize="{'w': 400, 'h': 400, 'output_format': 'webp'}">
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>
